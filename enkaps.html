@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class CetakNama {
+            #name;
+            
+            constructor(name) {
+                this.#name = name;
+            }
+
+            get getName() {
+                return this.#name;
+            }
+
+            set setName(value) {
+                this.#name = value;
+            }
+
+            #sayHello(name) {
+                console.log(`Hello, ${name}`);
+            }
+
+            #sayBye() {
+                console.log('Good Bye!');
+            }
+
+            // Method ini namanya "sat", bukan "say"
+            sat(name) {
+                if (name) {
+                    this.#sayHello(name);
+                } else {
+                    this.#sayBye();
+                }
+            }
+        }
+
+        const nama1 = new CetakNama('veren');
+        console.info(nama1.getName); 
+
+        const nama2 = new CetakNama('navisa');
+        console.info(nama2.getName); 
+
+        nama2.sat('visa'); 
+
+        nama2.sat(); 
+    </script>
+</body>
+</html>
